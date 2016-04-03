@@ -1,0 +1,10 @@
+branch-defaults:
+  default:
+    environment: FinalApplication-dev2
+global:
+  application_name: FinalApplication
+  default_ec2_keyname: cloudAssignment3
+  default_platform: Python 2.7
+  default_region: null
+  profile: null
+  sc: null

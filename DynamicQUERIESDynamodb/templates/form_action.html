@@ -1,0 +1,48 @@
+ <html>
+    <head>
+        <title>Results</title>
+        
+    </head>
+	<table style="border :1px solid black">
+    <body>
+	<h3> The Results of Complaints from State {{state}} are below: </h3>
+	<h3> The Time taken for query {{time}} are below: </h3>
+			<tr>
+			<th style="background-color: #CCFFCC; margin:5px">Complaint ID</th>
+			<th style="background-color: #CCFFCC; margin:5px">Product</th>
+			<th style="background-color: #CCFFCC; margin:5px">SubProduct</th>
+			<th style="background-color: #CCFFCC; margin:5px">Issue</th>
+			<th style="background-color: #CCFFCC; margin:5px">State</th>
+			<th style="background-color: #CCFFCC; margin:5px">Zip code</th>
+			<th style="background-color: #CCFFCC; margin:5px">Company</th>
+			<th style="background-color: #CCFFCC; margin:5px">Company_Response</th>
+			<th style="background-color: #CCFFCC; margin:5px">Timely Response</th>
+			<th style="background-color: #CCFFCC; margin:5px">Consumer disputed</th>
+			</tr>
+			
+			{% for item in query %}
+			<tr>
+			<td> {{ item['Complaint_ID'] }} </td>
+			<td> {{ item['Product'] }} </td>
+			<td> {{ item['Sub-product'] }} </td>
+			<td> {{ item['Issue'] }} </td>
+			<td> {{ item['State'] }} </td>
+			<td> {{ item['ZIP_code'] }} </td>
+			<td> {{ item['Company'] }} </td>
+			<td> {{ item['Company_response'] }} </td>
+			<td> {{ item['Timely_response?'] }} </td>
+			<td> {{ item['Consumer_disputed'] }} </td>
+			
+			{% endfor %}
+			<div class="title">
+				<form method="post" action="{{ url_for('goBack') }}">
+                 
+                  <input type="submit" value="Back" />
+			</form>
+            </div>
+                
+            </div>
+        
+    </body>
+	</table>
+</html>

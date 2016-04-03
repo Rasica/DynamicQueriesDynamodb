@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Welcome</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="container">
+            <div class="title">
+                <h1>Dynamo Database</h1>
+            </div>
+            <div id="content">
+			{% if tableStatus == 'true' %}
+			 
+                <form method="post" action="{{ url_for('getData') }}">
+               <table>
+			   
+			   <tr>
+				<td>
+				<label for="tuple">Please enter the State:</label></td>
+                  <td><input type="text" name="state" /></td><td> <h5>Only the initials eg. 'TX' </h5>
+                 </td><br/>
+				 </tr>
+				 
+</table>                 
+				 <input type="submit" />
+				</form>
+			{% endif %}	
+            </div>
+			<div>
+			{% if tableStatus == 'false' %}
+			<form method="post" action="{{ url_for('insertData') }}">
+                 
+                  <input type="submit" value="Insert" />
+			</form>
+			{% endif %}
+                        </div>
+        </div>
+    </body>
+</html>
+ 
